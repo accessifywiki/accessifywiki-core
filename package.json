@@ -1,0 +1,28 @@
+{
+  "private": true,
+  "name": "@accessifywiki/core",
+  "description": "Fixing the Web for all, one site at a time.",
+  "version": "2.0.0-alpha",
+  "license": "?",
+  "main": "lib/index.js",
+  "repository": "https://github.com/accessifywiki/accessifywiki-core.git",
+  "scripts": {
+    "build": "tsc --lib es6,dom -outDir lib src/index.ts",
+    "test:validator": "ts-node src/index.ts --validator-test",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.1.0",
+    "@types/node": "^13.5.1",
+    "ajv": "^6.11.0",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.0.0",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.5"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "verbose": true
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "title": " Accessibility fixes for the page :~ 'example.html' ",
+
+  "updatedAt": "2020-01-26T22:30:00Z",
+
+  "include": [ "http://localhost:9001/*" ],
+
+  "onLoadTimeout": 200,
+
+  "fixesOnLoad": [ {
+      "#": "Just a comment ...!",
+      "selectors": "img[ src *= '_Gull_' ]",
+      "attributes": {
+        "alt": "Photo of a black-headed gull, on :~ Species.Wikimedia.org.",
+        "aria-label": "Photo of a black-headed gull, on :~ Species.Wikimedia.org."
+      }
+    }, {
+      "selectors": ".X-i-will-not-be-found",
+      "attributes": {
+        "alt": "Hello world!"
+      }
+    }
+  ]
+}
