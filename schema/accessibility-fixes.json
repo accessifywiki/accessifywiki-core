@@ -13,16 +13,22 @@
         "A collection of fixes, keyed by HTML attribute name. Not an exhaustive list in 'properties' (yet?!) @TODO: See the 'white-list'.",
       "type": "object",
       "required": [],
-      "additionalProperties": {
-        "type": [ "string", "number", "boolean" ],
-        "oneOf": [ { "type": "string" }, { "type": "number" } ]
-      },
+      "additionalProperties": false,
       "properties"  : {
+        "accesskey" : { "type": "string" },
         "alt"       : { "type": "string" },
-        "aria-label": { "type": "string" },
+        "for"       : { "type": "string" },
+        "id"        : { "type": "string" },
+        "lang"      : { "type": "string" },
+        "longdesc"  : { "type": "string" },
+        "minlength" : { "type": "integer", "minimum": 1 },
         "maxlength" : { "type": "integer", "minimum": 1 },
+        "pattern"   : { "type": "string" },
+        "placeholder":{ "type": "string" },
+        "required"  : { "type": "string" },
         "role"      : { "type": "string" },
         "tabindex"  : { "type": "integer", "minimum": -1 },
+        "target"    : { "type": "string" },
         "title"     : { "type": "string" },
         "type"      : { "type": "string" }
       },
