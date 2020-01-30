@@ -18,17 +18,18 @@
 
 export const ATTRIBUTE_ARIA_REGEX = /^aria\-[a-z]{4,16}$/;
 
-export const ATTRIBUTE_WHITE_LIST_COUNT: number = 17;
+export const ATTRIBUTE_WHITE_LIST_COUNT: number = 16;
 
 export const ATTRIBUTE_WHITE_LIST: Array<string> = [
   'accesskey',
   'alt',
-  'aria-*',
-  'data-*',
+  // 'aria-*',
+  // 'data-*',
   'for',
   'id',
   'lang',
   'longdesc',
+  'minlength',
   'maxlength',
   'pattern',
   'placeholder',

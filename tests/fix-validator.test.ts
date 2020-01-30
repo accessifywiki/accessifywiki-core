@@ -1,4 +1,5 @@
 /**
+ * Test the 'FixValidator' class.
  *
  * @author NDF, 29-Jan-2020.
  */

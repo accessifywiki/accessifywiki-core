@@ -10,7 +10,7 @@
 
     "HtmlAttributeFixes": {
       "description":
-        "A collection of fixes, keyed by HTML attribute name. Not an exhaustive list in 'properties' (yet?!) @TODO: See the 'white-list'.",
+        "A collection of fixes, keyed by HTML attribute name. Should now match the 'white list'. Plus, WAI-ARIA and 'data-*' patternProps.",
       "type": "object",
       "required": [],
       "additionalProperties": false,

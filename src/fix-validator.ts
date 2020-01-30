@@ -12,7 +12,7 @@ import * as Ajv from 'ajv';
 import * as path from 'path';
 import * as fs from 'fs';
 
-interface JsonSchema {
+export interface JsonSchema {
   '$schema'  : string,
   '$id'      : string,
   title      : string,
@@ -61,7 +61,7 @@ export class FixValidator {
 
   // ----------------------------------------------------------
 
-  private async getFixSchema(): Promise<JsonSchema> {
+  public async getFixSchema(): Promise<JsonSchema> {
     return await this.readJsonFile([ __dirname, '..', 'schema', this.schemaFile ]);
   }
 
