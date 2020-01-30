@@ -18,7 +18,7 @@ switch (process.argv.slice(-1)[ 0 ]) {
   case '--validator-test':
     const validator = new FixValidator();
 
-    validator.validateTest();
+    console.log(process.argv); // @was: validator.validateTest();
   break;
 
   // default: console.warn('?')
