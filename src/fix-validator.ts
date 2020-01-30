@@ -8,11 +8,9 @@
 
 import { AccessibilityFixes, AccessibilityFixStruct, HtmlAttributeFixes, FixReport } from './accessibility-fixes';
 import { ATTRIBUTE_WHITE_LIST, ATTRIBUTE_ARIA_REGEX } from './attribute-white-list';
+import * as Ajv from 'ajv';
 import * as path from 'path';
 import * as fs from 'fs';
-import * as Ajv from 'ajv';
-
-// const Ajv = require('ajv');
 
 interface JsonSchema {
   '$schema'  : string,
@@ -23,34 +21,6 @@ interface JsonSchema {
   properties?: {},
   additionalProperties?: boolean,
 }
-
-// `Ajv` module?
-/* interface LogFn {
-  (p: any, p2?: any): void // => {}
-}
-
-interface Logger {
-  error: LogFn,
-  log  : LogFn,
-  warn : LogFn,
-}
-
-export interface ValidatorOpt {
-  allErrors?: boolean,
-  verbose  ?: boolean,
-  logger   ?: Logger,
-}
-
-export interface ValidationError {
-  keyword   : string,
-  dataPath  : string,
-  schemaPath: string,
-  params    : {},
-  message   : string,
-  schema   ?: any,  // Verbose only.
-  parentSchema?: {},
-  data     ?: any,
-} */
 
 // const SCHEMA_FILE = 'accessibility-fix-schema.json';
 
@@ -64,12 +34,11 @@ export class FixValidator {
 
     const isValid: boolean = await ajv.validate(schema, fixes);
 
-    if (options && options.logger) {
+    if (options && options.verbose) {
       if (isValid) {
         console.log('OK. Valid JSON fixes!');
       } else {
-      //if (!valid) {
-        options.logger.error('Validation errors:', ajv.errors);
+        console.error('Validation errors:', ajv.errors); // options.logger.error()
       }
     }
 
@@ -82,7 +51,6 @@ export class FixValidator {
     return this.validate(data, options);
   }
 
-  // allowAttr
   public isAllowedAttr(attribute: string): boolean {
     return ATTRIBUTE_WHITE_LIST.indexOf(attribute) !== -1 || this.isAriaAttr(attribute);
   }
@@ -93,14 +61,7 @@ export class FixValidator {
 
   // ----------------------------------------------------------
 
-  public async validateTest(): Promise<any> {
-  }
-
   private async getFixSchema(): Promise<JsonSchema> {
-    // const SCHEMA_PATH = path.join(__dirname, SCHEMA_FILE);
-    // const schemaJson: string = await fs.promises.readFile(SCHEMA_PATH, 'utf8');
-
-    // return JSON.parse(schemaJson);
     return await this.readJsonFile([ __dirname, '..', 'schema', this.schemaFile ]);
   }
 

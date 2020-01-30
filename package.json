@@ -9,7 +9,7 @@
   "scripts": {
     "build": "tsc --lib es6,dom -outDir lib src/index.ts",
     "test:validator": "ts-node src/index.ts --validator-test",
-    "test": "jest"
+    "test": "jest --colors"
   },
   "devDependencies": {
     "@types/jest": "^25.1.0",
@@ -23,6 +23,7 @@
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node",
+    "useStderr": true,
     "verbose": true
   }
 }

@@ -16,7 +16,6 @@ const VALIDATOR_OPT: Ajv.Options = { // Was: ValidatorOpt
   logger:  IS_VERBOSE ? console : undefined,
 };
 
-
 describe("Test the 'Fix Validator' class:", () => {
   /* let validator;
 
@@ -71,11 +70,12 @@ describe("Test the 'Fix Validator' class:", () => {
 
 });
 
+// --------------------------------------------------------
+
 function isJestVerbose(): boolean {
   // console.debug(process.argv);
 
   const VERBOSE_CMD = process.argv.slice(-1)[ 0 ] == '--verbose';
-
   const VERBOSE_PKG = require('../package.json').jest.verbose;
 
   return VERBOSE_CMD || VERBOSE_PKG;
