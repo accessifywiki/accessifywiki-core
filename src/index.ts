@@ -4,6 +4,7 @@ import { ATTRIBUTE_WHITE_LIST, ATTRIBUTE_ARIA_REGEX } from './attribute-white-li
 import { DomAccessibilityFixer } from './dom-accessibility-fixer';
 // import { DomApplyFixes } from './dom-apply-fixes';
 import { FixValidator } from './fix-validator';
+import { WaiAriaSchema } from './aria-schema';
 
 export {
   AccessibilityFixes,
@@ -11,6 +12,7 @@ export {
   ATTRIBUTE_ARIA_REGEX,
   DomAccessibilityFixer,
   FixValidator,
+  WaiAriaSchema,
 }
 
 switch (process.argv.slice(-1)[ 0 ]) {
@@ -19,7 +21,12 @@ switch (process.argv.slice(-1)[ 0 ]) {
     const validator = new FixValidator();
 
     console.log(process.argv); // @was: validator.validateTest();
-  break;
+    break;
+
+  case '--aria-process':
+    const rdf = new WaiAriaSchema();
+    rdf.process();
+    break;
 
   // default: console.warn('?')
 }

@@ -8,6 +8,7 @@
   "repository": "https://github.com/accessifywiki/accessifywiki-core.git",
   "scripts": {
     "build": "tsc --lib es6,dom -outDir lib src/index.ts",
+    "aria:process": "ts-node src/index.ts --aria-process",
     "test:validator": "ts-node src/index.ts --validator-test",
     "test": "jest --colors"
   },

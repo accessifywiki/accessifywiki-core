@@ -32,7 +32,7 @@ describe("Test the 'Fix Validator' class:", () => {
     expect(errors).toBeNull();
   });
 
-  test("Fixes containing invalid timeout.", async () => {
+  test("Fixes containing invalid timeout ~ give an error!", async () => {
     const validator = new FixValidator();
 
     const errors = await validator.validate({ onLoadTimeout: 21 }, VALIDATOR_OPT);
@@ -45,7 +45,7 @@ describe("Test the 'Fix Validator' class:", () => {
     } */
   });
 
-  test("Fixes containing invalid 'updatedAt'.", async () => {
+  test("Fixes containing invalid 'updatedAt' ~ give an error!", async () => {
     const validator = new FixValidator();
 
     const errors = await validator.validate({ updatedAt: 'zzz' }, VALIDATOR_OPT);
