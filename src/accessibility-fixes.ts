@@ -52,7 +52,7 @@ export interface AccessibilityFixes {
   title         ?: string,
   updatedAt     ?: IsoDateTime,
 
-  include        : Array<UrlOrPattern>,
+  include       ?: Array<UrlOrPattern>, // @TODO: required?
   testUrls      ?: Array<UrlOrPattern>,
 
   fixesOnLoad   ?: Array<AccessibilityFixStruct>,  // 'fixesOnLoad'
