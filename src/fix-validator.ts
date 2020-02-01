@@ -1,4 +1,5 @@
 /**
+ * A JSON Schema-based validator for a collection of accessibility fixes.
  *
  * @author NDF, 28-Jan-2020.
  * @see  https://npmjs.com/package/ajv#options

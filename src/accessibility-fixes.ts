@@ -10,11 +10,13 @@
  */
 
 // Aliases for documentation.
+type UrlOrPattern  = string;
 type CommentText   = string;
 type CssSelectors  = string;
 type CssStylesheet = string;
 type IsoDateTime   = string;
 type Milliseconds  = number;
+
 
 // @TODO: How to deal with each 'aria-*' attribute, e.g. 'aria-label', and arbitrary 'data-*' attributes?
 export interface HtmlAttributeFixes {
@@ -47,7 +49,11 @@ export interface AccessibilityFixStruct {
 }
 
 export interface AccessibilityFixes {
+  title         ?: string,
   updatedAt     ?: IsoDateTime,
+
+  include        : Array<UrlOrPattern>,
+  testUrls      ?: Array<UrlOrPattern>,
 
   fixesOnLoad   ?: Array<AccessibilityFixStruct>,  // 'fixesOnLoad'
   onLoadTimeout ?: Milliseconds,
