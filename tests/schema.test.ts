@@ -29,8 +29,8 @@ describe("Test the JSON schema.", () => {
 
     expect(ATTR_FIXES.additionalProperties).toBeFalsy();
     expect(patternAttr).toHaveLength(2);
-    expect(attributes).toHaveLength(16);
-    expect(ATTRIBUTE_WHITE_LIST).toHaveLength(16);
+    expect(attributes).toHaveLength(17);
+    expect(ATTRIBUTE_WHITE_LIST).toHaveLength(17);
 
     expect(attributes).toEqual(ATTRIBUTE_WHITE_LIST);
 

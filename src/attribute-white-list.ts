@@ -18,7 +18,7 @@
 
 export const ATTRIBUTE_ARIA_REGEX = /^aria\-[a-z]{4,16}$/;
 
-export const ATTRIBUTE_WHITE_LIST_COUNT: number = 16;
+export const ATTRIBUTE_WHITE_LIST_COUNT: number = 17;
 
 export const ATTRIBUTE_WHITE_LIST: Array<string> = [
   'accesskey',
@@ -35,7 +35,7 @@ export const ATTRIBUTE_WHITE_LIST: Array<string> = [
   'placeholder',
   'required',
   'role',
-  // 'style',
+  'style',    // Add for now!
   'tabindex', // number.
   'target',
   'title',

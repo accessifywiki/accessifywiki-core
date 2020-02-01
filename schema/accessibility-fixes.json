@@ -27,6 +27,7 @@
         "placeholder":{ "type": "string" },
         "required"  : { "type": "string" },
         "role"      : { "type": "string" },
+        "style"     : { "type": "string" },
         "tabindex"  : { "type": "integer", "minimum": -1 },
         "target"    : { "type": "string" },
         "title"     : { "type": "string" },
@@ -74,6 +75,10 @@
     "title"     : { "type": "string" },
     "updatedAt" : { "type": "string", "format": "date-time" },
     "include"   : {
+      "type"    : "array",
+      "items"   : { "type": "string", "format": "uri" }
+    },
+    "testUrls"  : {
       "type"    : "array",
       "items"   : { "type": "string", "format": "uri" }
     },
