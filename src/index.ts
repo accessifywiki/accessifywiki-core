@@ -4,7 +4,7 @@ import { ATTRIBUTE_WHITE_LIST, ATTRIBUTE_ARIA_REGEX } from './attribute-white-li
 import { DomAccessibilityFixer } from './dom-accessibility-fixer';
 // import { DomApplyFixes } from './dom-apply-fixes';
 import { FixValidator } from './fix-validator';
-import { WaiAriaSchema } from './aria-schema';
+import { WaiAriaSchema } from './wai-aria-schema';
 
 export {
   AccessibilityFixes,
