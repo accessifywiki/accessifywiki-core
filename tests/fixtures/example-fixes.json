@@ -15,10 +15,26 @@
         "aria-label": "Photo of a black-headed gull, on :~ Species.Wikimedia.org."
       }
     }, {
+      "selectors": ".fake-button",
+      "attributes": {
+        "role": "button",
+        "tabindex": 0,
+        "style": "color: #444; cursor: pointer;"
+      }
+    }, {
+      "selectors": "html",
+      "attributes": {
+        "lang": "en-GB"
+      }
+    }, {
       "selectors": ".X-i-will-not-be-found",
       "attributes": {
         "alt": "Hello world!"
       }
     }
+  ],
+
+  "styles": [
+    " *:focus { outline: 2px solid darkorange; } "
   ]
 }

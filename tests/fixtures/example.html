@@ -1,9 +1,23 @@
 <!doctype html> <title> Example with accessibility bugs </title>
 
+<link rel=stylesheet href="styles.css">
+
+
 <h1> Example with accessibility bugs </h1>
 
-<!-- A missing 'ALT' attribute -->
+<h2> A missing '<tt>ALT</tt>' attribute </h2>
+
 <a href="https://species.wikimedia.org/wiki/File:Black-headed_Gull_-_St_James_27s_Park_2C_London_-_Nov_2006_edit2.jpg"
   ><img src=
-  "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Black-headed_Gull_-_St_James_27s_Park_2C_London_-_Nov_2006_edit2.jpg/320px-Black-headed_Gull_-_St_James_27s_Park_2C_London_-_Nov_2006_edit2.jpg"
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Black-headed_Gull_-_St_James_27s_Park_2C_London_-_Nov_2006_edit2.jpg/480px-Black-headed_Gull_-_St_James_27s_Park_2C_London_-_Nov_2006_edit2.jpg"
 /></a>
+
+<h2> An inaccessible '<tt>button</tt>' </h2>
+
+<div
+  class="fake-button"
+  data-X-href="#"
+  onclick="console.log('Click!'); alert('Click!'); return false" >Click me</div>
+
+
+<p> <a href="https://example.org">Visit example.org</a>. </p>

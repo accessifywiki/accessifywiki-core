@@ -1,0 +1,25 @@
+
+body {
+  color: #333;
+  font: 1rem sans-serif;
+  margin: 1rem auto;
+  max-width: 36rem;
+}
+
+.fake-button {
+  background: #ccc;
+  border: 1px solid #bbb;
+  border-radius: .3rem;
+  color: #888;
+  display: inline-block;
+  margin: 1rem auto;
+  padding: .8rem 2rem;
+}
+
+.fake-button:hover {
+  background: #ddd;
+  color: #999;
+}
+
+
+*:focus { outline: 2px solid darkorange; }
