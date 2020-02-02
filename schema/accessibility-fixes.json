@@ -51,6 +51,7 @@
         "selectors" : { "type": "string" },
         "attributes": { "$ref": "#/definitions/HtmlAttributeFixes" },
         "styles"    : {
+          "description": "@TODO: styles here ...",
           "type"    : "array",
           "items"   : { "type": "string" }
         }
@@ -87,6 +88,11 @@
     "fixesOnLoad": {
       "type"    : "array",
       "items"   : { "$ref"  : "#/definitions/AccessibilityFixStruct" }
+    },
+
+    "styles": {
+      "description": "@TODO: ... or here ?!",
+      "type": [ "string", "array" ]
     }
   }
 }

@@ -10,6 +10,7 @@ with a JSON schema and unit tests.
 npm install
 npm run build
 npm test
+npm start
 ```
 
 ## Components
@@ -20,5 +21,5 @@ npm test
 
 ---
 [blog]: https://nick.freear.org.uk/2018/11/18/accessify-wiki.html
-[gh-badge]: https://github.com/IET-OU/admins-faq-and-form-parser/workflows/Node%20CI/badge.svg
-[gh-link]: https://github.com/IET-OU/admins-faq-and-form-parser/actions "Test status ~ 'Node CI'"
+[gh-badge]: https://github.com/accessifywiki/accessifywiki-core/workflows/Node%20CI/badge.svg
+[gh-link]: https://github.com/accessifywiki/accessifywiki-core/actions "Test status ~ 'Node CI'"
