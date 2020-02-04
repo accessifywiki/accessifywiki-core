@@ -10,7 +10,7 @@
     "build": "tsc --lib es6,dom -outDir lib src/index.ts src/server.ts",
     "build:esm": "tsc --target es6 --lib dom -outDir esm src/accessifywiki.ts",
     "aria:process": "ts-node src/index.ts --aria-process",
-    "start": "node lib/server.js",
+    "start": "ts-node src/server.ts",
     "start:orig": "live-server --port=9001 --no-browser",
     "test:validator": "ts-node src/index.ts --validator-test",
     "test": "jest --colors"

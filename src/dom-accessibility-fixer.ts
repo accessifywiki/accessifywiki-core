@@ -8,9 +8,6 @@
  * @was `./dom-apply-fixes.js`
  */
 
-/// <---reference types="node" />
-
-// import { ATTRIBUTE_WHITE_LIST } from './attribute-white-list';
 import { AccessibilityFixes, AccessibilityFixStruct, HtmlAttributeFixes, FixReport } from './accessibility-fixes';
 
 export class DomAccessibilityFixer {
@@ -56,16 +53,3 @@ export class DomAccessibilityFixer {
     return this.fixReport;
   }
 }
-
-/* export async function domApplyFixes(fixes: AccessibilityFixes): Promise<FixReport> {
-  fixReport.input = fixes;
-
-  await setTimeout(() => domApplyFixesNow(fixes.fixesOnLoad), fixes.onLoadTimeout);
-
-  return fixReport;
-}
-
-export function domApplyFixesNow(fixesInner: Array<AccessibilityFixStruct>): FixReport {
-
-  return fixReport;
-} */

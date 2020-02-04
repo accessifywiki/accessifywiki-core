@@ -4,8 +4,8 @@
 
 import { DomAccessibilityFixer } from './dom-accessibility-fixer.js'; // Yes, '.js'!
 
+// E.g. <path>/example-fixes.json
 const FIX_URL = document.querySelector('script[ data-a11y-fix-uri ]').getAttribute('data-a11y-fix-uri');
-// const FIX_URL = 'example-fixes.json';
 
 fetch(FIX_URL).then(resp => resp.json()).then(fixes => {
   console.warn('Accessibility fixes:', fixes);

@@ -1,18 +1,17 @@
 #!/usr/bin/env node
 
 /**
- * Inject accessibility-fix Javascript - for development/ testing!
+ * 'live-server' middleware ~ inject accessibility-fix Javascript - for demo/testing!
  *
  * @author NDF / 21-August-2019, 01-Feb-2020.
  * @see  https://github.com/tapio/live-server#usage-from-node
  */
 
-const liveServer = require('live-server');
-
+import * as liveServer from 'live-server';
 import * as path from 'path';
 import * as fs from 'fs';
 
-const FOOTER = [
+const FOOTER: string[] = [
   '\n',
   '<!-- Injected -->',
   '<script\n  type="module"\n  src="../../esm/accessifywiki.js"\n  data-a11y-fix-uri="./example-fixes.json" ></script>',
@@ -34,13 +33,13 @@ const PARAMS = {
 
     function (req, res, next) {
       const IS_HTML_PAGE: boolean = /\.html/.test(req.url);
-      const REQUEST_FIX : boolean = /fix=a/.test(req.url);
+      const REQUEST_FIX : boolean = /fix=(a|true|1)/.test(req.url);
 
       if (IS_HTML_PAGE && REQUEST_FIX) {
         const HTML_FILE: string = req.url.replace(/\?.*/, '');
         const FILE_PATH: string = path.join(__dirname, '..', HTML_FILE);
 
-        fs.readFile(FILE_PATH, (err, html: Buffer) => {
+        fs.readFile(FILE_PATH, (err: Error, html: Buffer) => {
           if (err) {
             console.error('Server:', '[error]', err.toString())
 
