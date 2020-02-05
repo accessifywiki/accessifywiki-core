@@ -4,6 +4,7 @@
  * @author NDF, 29-Jan-2020.
  */
 
+import { FileFixValidator } from '../src/file-fix-validator';
 import { FixValidator /*, ValidatorOpt, ValidationError */ } from '../src/fix-validator';
 import * as Ajv from 'ajv';
 
@@ -25,7 +26,7 @@ describe("Test the 'Fix Validator' class:", () => {
   }); */
 
   test("A valid input file :~ 'example-fixes.json'", async () => {
-    const validator = new FixValidator();
+    const validator = new FileFixValidator();
 
     const errors = await validator.validateFile(FIXTURE_PATH, VALIDATOR_OPT);
 
@@ -67,6 +68,14 @@ describe("Test the 'Fix Validator' class:", () => {
     expect(validator.isAriaAttr('aria-labelledby')).toBeTruthy();
     expect(validator.isAriaAttr('aria-z')).toBeFalsy();
     expect(validator.isAriaAttr('xxx')).toBeFalsy();
+  })
+
+  test("Test 'writeJsonSchemaFile' function.", async () => {
+    const validator = new FileFixValidator();
+
+    const result = await validator.writeJsonSchemaFile();
+
+    expect(result).toBeTruthy();
   })
 
 });

@@ -8,14 +8,15 @@
  */
 
 import { AccessibilityFixes, AccessibilityFixStruct, HtmlAttributeFixes, FixReport } from './accessibility-fixes';
+import { ACCESSIBILITY_FIXES_SCHEMA } from './accessibility-fixes-schema';
 import { ATTRIBUTE_WHITE_LIST, ATTRIBUTE_ARIA_REGEX } from './attribute-white-list';
 import * as Ajv from 'ajv';
-import * as path from 'path';
-import * as fs from 'fs';
 
 export interface JsonSchema {
   '$schema'  : string,
   '$id'      : string,
+  '#'       ?: string, // Optional 'comment'
+  integrity ?: string, // Sub-resource integrity (SRI) ~ Typescript source?
   title      : string,
   definitions: {},
   type       : string,
@@ -31,7 +32,7 @@ export class FixValidator {
 
   public async validate(fixes: AccessibilityFixes, options: Ajv.Options = {}): Promise<Array<Ajv.ErrorObject>> {
     const ajv = new Ajv(options); // options can be passed, e.g. {allErrors: true}
-    const schema : JsonSchema = await this.getFixSchema();
+    const schema : JsonSchema = this.getFixSchema();
 
     const isValid: boolean = await ajv.validate(schema, fixes);
 
@@ -46,11 +47,7 @@ export class FixValidator {
     return ajv.errors;
   }
 
-  public async validateFile(filePath: string | Array<string>, options?: {}): Promise<any> {
-    const data = await this.readJsonFile(filePath);
-
-    return this.validate(data, options);
-  }
+  /* public async validateFile(filePath, options): Promise<any> { } */
 
   public isAllowedAttr(attribute: string): boolean {
     return ATTRIBUTE_WHITE_LIST.indexOf(attribute) !== -1 || this.isAriaAttr(attribute);
@@ -62,14 +59,14 @@ export class FixValidator {
 
   // ----------------------------------------------------------
 
-  public async getFixSchema(): Promise<JsonSchema> {
-    return await this.readJsonFile([ __dirname, '..', 'schema', this.schemaFile ]);
+  public getFixSchema(): JsonSchema {
+    return ACCESSIBILITY_FIXES_SCHEMA;
+    // return await this.readJsonFile([ __dirname, '..', 'schema', this.schemaFile ]);
   }
 
-  private async readJsonFile(fpath: string | Array<string>): Promise<any> {
-    const filePath: string = typeof fpath === 'string' ? fpath : path.join(...fpath);
-    const jsonData: string = await fs.promises.readFile(filePath, 'utf8');
-
-    return JSON.parse(jsonData);
+  public getSchemaFilePath(): Array<string> {
+    return [ __dirname, '..', 'schema', this.schemaFile ];
   }
+
+  /* private async readJsonFile(fpath): Promise<any> { } */
 }

@@ -3,6 +3,7 @@ import { AccessibilityFixes, AccessibilityFixStruct, HtmlAttributeFixes, FixRepo
 import { ATTRIBUTE_WHITE_LIST, ATTRIBUTE_ARIA_REGEX } from './attribute-white-list';
 import { DomAccessibilityFixer } from './dom-accessibility-fixer';
 // import { DomApplyFixes } from './dom-apply-fixes';
+import { FileFixValidator } from './file-fix-validator';
 import { FixValidator } from './fix-validator';
 import { WaiAriaSchema } from './wai-aria-schema';
 
@@ -12,6 +13,7 @@ export {
   ATTRIBUTE_ARIA_REGEX,
   DomAccessibilityFixer,
   FixValidator,
+  FileFixValidator,
   WaiAriaSchema,
 }
 
