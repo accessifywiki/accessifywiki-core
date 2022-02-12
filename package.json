@@ -18,7 +18,7 @@
   "devDependencies": {
     "@types/jest": "^25.1.0",
     "@types/node": "^13.5.1",
-    "ajv": "^6.11.0",
+    "ajv": "^6.12.3",
     "jest": "^25.1.0",
     "live-server": "^1.2.1",
     "ts-jest": "^25.0.0",
